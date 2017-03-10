@@ -7,6 +7,7 @@
 //
 
 #import "LXJHomeViewController.h"
+#import "LXJChannelModel.h"
 
 @interface LXJHomeViewController ()
 
@@ -20,6 +21,10 @@
  */
 @property (weak, nonatomic) IBOutlet UICollectionView *newsView;
 
+/**
+ 频道数据
+ */
+@property (nonatomic, strong) NSArray *channelData;
 @end
 
 @implementation LXJHomeViewController
@@ -27,21 +32,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.channelData = [LXJChannelModel loadChannelData];
+    NSLog(@"%@", self.channelData);
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

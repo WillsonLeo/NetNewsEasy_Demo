@@ -14,6 +14,9 @@
 		DD9B6DC81E72C00D0046C620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DC71E72C00D0046C620 /* Assets.xcassets */; };
 		DD9B6DCB1E72C00D0046C620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DC91E72C00D0046C620 /* LaunchScreen.storyboard */; };
 		DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */; };
+		DD9B6DDC1E72CA1F0046C620 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DDB1E72CA1F0046C620 /* topic_news.json */; };
+		DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DDF1E72CC050046C620 /* NSArray+Log.m */; };
+		DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,11 @@
 		DD9B6DCC1E72C00D0046C620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD9B6DD81E72C7A10046C620 /* LXJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJHomeViewController.h; sourceTree = "<group>"; };
 		DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJHomeViewController.m; sourceTree = "<group>"; };
+		DD9B6DDB1E72CA1F0046C620 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
+		DD9B6DDE1E72CC050046C620 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		DD9B6DDF1E72CC050046C620 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		DD9B6DE11E72CCC80046C620 /* LXJChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJChannelModel.h; sourceTree = "<group>"; };
+		DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJChannelModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,8 @@
 		DD9B6DD41E72C7750046C620 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD9B6DE11E72CCC80046C620 /* LXJChannelModel.h */,
+				DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 		DD9B6DD61E72C7750046C620 /* MaterialLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				DD9B6DDB1E72CA1F0046C620 /* topic_news.json */,
 			);
 			path = MaterialLibrary;
 			sourceTree = "<group>";
@@ -147,8 +158,18 @@
 		DD9B6DD71E72C7750046C620 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DD9B6DDD1E72CBEC0046C620 /* Addition */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		DD9B6DDD1E72CBEC0046C620 /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				DD9B6DDE1E72CC050046C620 /* NSArray+Log.h */,
+				DD9B6DDF1E72CC050046C620 /* NSArray+Log.m */,
+			);
+			path = Addition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +236,7 @@
 			files = (
 				DD9B6DCB1E72C00D0046C620 /* LaunchScreen.storyboard in Resources */,
 				DD9B6DC81E72C00D0046C620 /* Assets.xcassets in Resources */,
+				DD9B6DDC1E72CA1F0046C620 /* topic_news.json in Resources */,
 				DD9B6DC61E72C00D0046C620 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */,
+				DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */,
+				DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */,
 				DD9B6DBD1E72C00D0046C620 /* main.m in Sources */,
 				DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */,
 			);
