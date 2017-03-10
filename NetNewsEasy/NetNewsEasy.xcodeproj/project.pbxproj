@@ -19,6 +19,8 @@
 		DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */; };
 		DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */; };
 		DD9B6DE91E72D86E0046C620 /* LXJNewsViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */; };
+		DD9B6DEC1E72DC7A0046C620 /* LXJNewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DEB1E72DC7A0046C620 /* LXJNewsViewCell.m */; };
+		DD9B6DEF1E72DE750046C620 /* LXJNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DEE1E72DE750046C620 /* LXJNewsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJChannelLabel.m; sourceTree = "<group>"; };
 		DD9B6DE71E72D86E0046C620 /* LXJNewsViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsViewFlowLayout.h; sourceTree = "<group>"; };
 		DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsViewFlowLayout.m; sourceTree = "<group>"; };
+		DD9B6DEA1E72DC7A0046C620 /* LXJNewsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsViewCell.h; sourceTree = "<group>"; };
+		DD9B6DEB1E72DC7A0046C620 /* LXJNewsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsViewCell.m; sourceTree = "<group>"; };
+		DD9B6DED1E72DE750046C620 /* LXJNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsViewController.h; sourceTree = "<group>"; };
+		DD9B6DEE1E72DE750046C620 /* LXJNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 			children = (
 				DD9B6DD81E72C7A10046C620 /* LXJHomeViewController.h */,
 				DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */,
+				DD9B6DED1E72DE750046C620 /* LXJNewsViewController.h */,
+				DD9B6DEE1E72DE750046C620 /* LXJNewsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +161,8 @@
 				DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */,
 				DD9B6DE71E72D86E0046C620 /* LXJNewsViewFlowLayout.h */,
 				DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */,
+				DD9B6DEA1E72DC7A0046C620 /* LXJNewsViewCell.h */,
+				DD9B6DEB1E72DC7A0046C620 /* LXJNewsViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,7 +318,9 @@
 			files = (
 				DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */,
 				DD9B6DE91E72D86E0046C620 /* LXJNewsViewFlowLayout.m in Sources */,
+				DD9B6DEC1E72DC7A0046C620 /* LXJNewsViewCell.m in Sources */,
 				DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */,
+				DD9B6DEF1E72DE750046C620 /* LXJNewsViewController.m in Sources */,
 				DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */,
 				DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */,
 				DD9B6DBD1E72C00D0046C620 /* main.m in Sources */,

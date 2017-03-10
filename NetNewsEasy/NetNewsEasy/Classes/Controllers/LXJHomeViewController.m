@@ -10,6 +10,7 @@
 #import "LXJChannelModel.h"
 #import "LXJChannelLabel.h"
 #import "LXJNewsViewFlowLayout.h"
+#import "LXJNewsViewCell.h"
 
 @interface LXJHomeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -70,17 +71,17 @@ static NSString *newsViewCellID = @"newsViewCellID";
     // 关闭水平垂直指示器
     self.newsView.showsHorizontalScrollIndicator = NO;
     self.newsView.showsVerticalScrollIndicator = NO;
-    // 打开预加载
+    // 打开预加载[还是有些不懂]
     self.newsView.prefetchingEnabled = YES;
 }
+
 // MARK:2. 实现UICollectionView的数据源方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.channelData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:newsViewCellID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1.0];
+    LXJNewsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:newsViewCellID forIndexPath:indexPath];
     
     return cell;
 }
