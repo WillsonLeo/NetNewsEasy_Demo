@@ -11,6 +11,7 @@
 #import "LXJChannelLabel.h"
 #import "LXJNewsViewFlowLayout.h"
 #import "LXJNewsViewCell.h"
+#import "LXJSessionManager.h"
 
 @interface LXJHomeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -82,6 +83,14 @@ static NSString *newsViewCellID = @"newsViewCellID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     LXJNewsViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:newsViewCellID forIndexPath:indexPath];
+    
+    LXJChannelModel *channelModel = self.channelData[indexPath.item];
+    NSString *htmlStr = [NSString stringWithFormat:@"%@/0-20.html",channelModel.tid];
+    [[LXJSessionManager sharedManager] requestDataWithURLStr:htmlStr RequestType:GET Parameters:nil success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
     
     return cell;
 }
