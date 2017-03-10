@@ -10,4 +10,8 @@
 
 @interface LXJNewsViewCell : UICollectionViewCell
 
+/**
+ 网络请求地址
+ */
+@property (nonatomic, copy) NSString *URLStr;
 @end

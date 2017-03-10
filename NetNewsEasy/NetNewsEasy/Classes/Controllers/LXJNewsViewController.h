@@ -10,4 +10,8 @@
 
 @interface LXJNewsViewController : UITableViewController
 
+/**
+ 网络请求地址
+ */
+@property (nonatomic, copy) NSString *URLStr;
 @end

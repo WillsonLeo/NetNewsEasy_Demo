@@ -7,6 +7,7 @@
 //
 
 #import "LXJNewsViewController.h"
+#import "LXJSessionManager.h"
 
 @interface LXJNewsViewController ()
 
@@ -17,11 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+}
+// urlstr 的 set 方法
+- (void)setURLStr:(NSString *)URLStr{
+    _URLStr = URLStr;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 发起网络请求
+        [[LXJSessionManager sharedManager] requestDataWithURLStr:URLStr RequestType:GET Parameters:nil success:^(id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
 }
 
 - (void)didReceiveMemoryWarning {
