@@ -23,6 +23,7 @@
 		DD9B6DEF1E72DE750046C620 /* LXJNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DEE1E72DE750046C620 /* LXJNewsViewController.m */; };
 		DD9B6DF31E72DF3B0046C620 /* LXJSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF21E72DF3B0046C620 /* LXJSessionManager.m */; };
 		DD9B6DF61E72E3950046C620 /* LXJNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF51E72E3950046C620 /* LXJNewsModel.m */; };
+		DD9B6DF91E72F0ED0046C620 /* LXJNewsDetailsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		DD9B6DF21E72DF3B0046C620 /* LXJSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJSessionManager.m; sourceTree = "<group>"; };
 		DD9B6DF41E72E3950046C620 /* LXJNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsModel.h; sourceTree = "<group>"; };
 		DD9B6DF51E72E3950046C620 /* LXJNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsModel.m; sourceTree = "<group>"; };
+		DD9B6DF71E72F0ED0046C620 /* LXJNewsDetailsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsDetailsViewCell.h; sourceTree = "<group>"; };
+		DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsDetailsViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */,
 				DD9B6DEA1E72DC7A0046C620 /* LXJNewsViewCell.h */,
 				DD9B6DEB1E72DC7A0046C620 /* LXJNewsViewCell.m */,
+				DD9B6DF71E72F0ED0046C620 /* LXJNewsDetailsViewCell.h */,
+				DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */,
 				DD9B6DEF1E72DE750046C620 /* LXJNewsViewController.m in Sources */,
 				DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */,
+				DD9B6DF91E72F0ED0046C620 /* LXJNewsDetailsViewCell.m in Sources */,
 				DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */,
 				DD9B6DBD1E72C00D0046C620 /* main.m in Sources */,
 				DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */,

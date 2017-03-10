@@ -7,11 +7,19 @@
 //
 
 #import "LXJNewsViewController.h"
-#import "LXJSessionManager.h"
+#import "LXJNewsModel.h"
+#import "LXJNewsDetailsViewCell.h"
 
 @interface LXJNewsViewController ()
 
+/**
+ 存储当前页面的新闻数据
+ */
+@property (nonatomic, strong) NSArray<LXJNewsModel *> *newsData;
 @end
+
+// 每个 cell 的重用 id
+static NSString *cellID = @"newsDetails";
 
 @implementation LXJNewsViewController
 
@@ -23,12 +31,17 @@
 - (void)setURLStr:(NSString *)URLStr{
     _URLStr = URLStr;
     
-    // 发起网络请求
-        [[LXJSessionManager sharedManager] requestDataWithURLStr:URLStr RequestType:GET Parameters:nil success:^(id responseObject) {
-            NSLog(@"%@",responseObject);
-        } failure:^(NSError *error) {
-            NSLog(@"%@",error);
-        }];
+    // 请求网络数据
+    [LXJNewsModel requestNewsDataFromURLStr:URLStr completion:^(NSArray *newsData) {
+//        NSLog(@"%@",newsData);
+        // 数据关联
+        self.newsData = newsData;
+        // 刷新数据
+        [self.tableView reloadData];
+    }];
+    
+    // 注册单元格
+    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,24 +52,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.newsData.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    LXJNewsDetailsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = self.newsData[indexPath.row].title;
+    // 赋值模型对象
+//    cell.newsDetailsModel = self.newsData[indexPath.row];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
