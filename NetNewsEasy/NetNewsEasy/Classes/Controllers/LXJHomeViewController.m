@@ -8,6 +8,7 @@
 
 #import "LXJHomeViewController.h"
 #import "LXJChannelModel.h"
+#import "LXJChannelLabel.h"
 
 @interface LXJHomeViewController ()
 
@@ -24,7 +25,7 @@
 /**
  频道数据
  */
-@property (nonatomic, strong) NSArray *channelData;
+@property (nonatomic, strong) NSArray<LXJChannelModel*> *channelData;
 @end
 
 @implementation LXJHomeViewController
@@ -32,12 +33,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.channelData = [LXJChannelModel loadChannelData];
-    NSLog(@"%@", self.channelData);
+    
+    // 获取频道数据并进行展示
+    [self loadChannelDataAndDisplay];
+    
+    // 界面搭建
+    [self setupUI];
+    
 }
 
+// 界面搭建
+- (void) setupUI{
+    // 如果在导航控制器的下面有滚动视图 内容将=自动往下偏移64,因此需要关闭
+    self.automaticallyAdjustsScrollViewInsets = NO;
 
+    // 关闭channelView的水平垂直指示器
+    self.channelView.showsVerticalScrollIndicator = NO;
+    self.channelView.showsHorizontalScrollIndicator = NO;
+}
 
+// 获取频道数据并进行展示
+- (void) loadChannelDataAndDisplay{
+    // 对频道数据进行初始化
+    self.channelData = [LXJChannelModel loadChannelData];
+    
+    // 设置 channelLabel 的宽高
+    CGFloat channelLabelWidth = [UIScreen mainScreen].bounds.size.width / 5.0;
+    CGFloat channelLabelHeight = self.channelView.bounds.size.height;
+    
+    // 遍历数据组
+    [self.channelData enumerateObjectsUsingBlock:^(LXJChannelModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        // 创建channelLabel
+        LXJChannelLabel *channelLabel = [[LXJChannelLabel alloc] initWithFrame: CGRectMake(idx * channelLabelWidth, 0, channelLabelWidth, channelLabelHeight)];
+        // 显示内容
+        channelLabel.text = self.channelData[idx].tname;
+        // 设置文字大小
+        channelLabel.font = [UIFont systemFontOfSize:15];
+        // 设置文字居中方式
+        channelLabel.textAlignment = NSTextAlignmentCenter;
+        // 添加到channelView上
+        [self.channelView addSubview:channelLabel];
+    }];
+    // 设置channelView的滚动范围
+    self.channelView.contentSize = CGSizeMake(channelLabelWidth * self.channelData.count, 0);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
