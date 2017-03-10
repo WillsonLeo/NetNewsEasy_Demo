@@ -9,8 +9,9 @@
 #import "LXJHomeViewController.h"
 #import "LXJChannelModel.h"
 #import "LXJChannelLabel.h"
+#import "LXJNewsViewFlowLayout.h"
 
-@interface LXJHomeViewController ()
+@interface LXJHomeViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 /**
  频道view
@@ -22,11 +23,18 @@
  */
 @property (weak, nonatomic) IBOutlet UICollectionView *newsView;
 
+
+@property (weak, nonatomic) IBOutlet LXJNewsViewFlowLayout *newsViewFlowLayout;
+
 /**
  频道数据
  */
 @property (nonatomic, strong) NSArray<LXJChannelModel*> *channelData;
+
 @end
+
+//新闻界面的UICollectionViewCell 的重用 ID
+static NSString *newsViewCellID = @"newsViewCellID";
 
 @implementation LXJHomeViewController
 
@@ -50,9 +58,34 @@
     // 关闭channelView的水平垂直指示器
     self.channelView.showsVerticalScrollIndicator = NO;
     self.channelView.showsHorizontalScrollIndicator = NO;
+    
+    // 设置newsView的数据源和代理对象
+    self.newsView.dataSource = self;
+    self.newsView.delegate = self;
+    
+    //关闭弹簧
+    self.newsView.bounces = NO;
+    // 打开分页
+    self.newsView.pagingEnabled = YES;
+    // 关闭水平垂直指示器
+    self.newsView.showsHorizontalScrollIndicator = NO;
+    self.newsView.showsVerticalScrollIndicator = NO;
+    // 打开预加载
+    self.newsView.prefetchingEnabled = YES;
+}
+// MARK:2. 实现UICollectionView的数据源方法
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.channelData.count;
 }
 
-// 获取频道数据并进行展示
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:newsViewCellID forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1.0];
+    
+    return cell;
+}
+
+// MARK:1. 获取频道数据并进行展示
 - (void) loadChannelDataAndDisplay{
     // 对频道数据进行初始化
     self.channelData = [LXJChannelModel loadChannelData];

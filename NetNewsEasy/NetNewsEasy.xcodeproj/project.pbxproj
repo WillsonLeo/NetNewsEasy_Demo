@@ -18,6 +18,7 @@
 		DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DDF1E72CC050046C620 /* NSArray+Log.m */; };
 		DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */; };
 		DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */; };
+		DD9B6DE91E72D86E0046C620 /* LXJNewsViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJChannelModel.m; sourceTree = "<group>"; };
 		DD9B6DE41E72D0E20046C620 /* LXJChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJChannelLabel.h; sourceTree = "<group>"; };
 		DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJChannelLabel.m; sourceTree = "<group>"; };
+		DD9B6DE71E72D86E0046C620 /* LXJNewsViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsViewFlowLayout.h; sourceTree = "<group>"; };
+		DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 			children = (
 				DD9B6DE41E72D0E20046C620 /* LXJChannelLabel.h */,
 				DD9B6DE51E72D0E20046C620 /* LXJChannelLabel.m */,
+				DD9B6DE71E72D86E0046C620 /* LXJNewsViewFlowLayout.h */,
+				DD9B6DE81E72D86E0046C620 /* LXJNewsViewFlowLayout.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */,
+				DD9B6DE91E72D86E0046C620 /* LXJNewsViewFlowLayout.m in Sources */,
 				DD9B6DE01E72CC050046C620 /* NSArray+Log.m in Sources */,
 				DD9B6DE31E72CCC80046C620 /* LXJChannelModel.m in Sources */,
 				DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */,
