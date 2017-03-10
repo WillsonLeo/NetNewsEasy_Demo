@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LXJHomeViewController.h
 //  NetNewsEasy
 //
 //  Created by 李旭杰 on 2017/3/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LXJHomeViewController : UIViewController
 
 @end
-

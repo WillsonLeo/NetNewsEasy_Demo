@@ -10,10 +10,10 @@
 		D87F6D270A08C644A709F2F1 /* libPods-NetNewsEasy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B75BA849C8257559740A34FC /* libPods-NetNewsEasy.a */; };
 		DD9B6DBD1E72C00D0046C620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DBC1E72C00D0046C620 /* main.m */; };
 		DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DBF1E72C00D0046C620 /* AppDelegate.m */; };
-		DD9B6DC31E72C00D0046C620 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DC21E72C00D0046C620 /* ViewController.m */; };
 		DD9B6DC61E72C00D0046C620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DC41E72C00D0046C620 /* Main.storyboard */; };
 		DD9B6DC81E72C00D0046C620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DC71E72C00D0046C620 /* Assets.xcassets */; };
 		DD9B6DCB1E72C00D0046C620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD9B6DC91E72C00D0046C620 /* LaunchScreen.storyboard */; };
+		DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +24,12 @@
 		DD9B6DBC1E72C00D0046C620 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD9B6DBE1E72C00D0046C620 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DD9B6DBF1E72C00D0046C620 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DD9B6DC11E72C00D0046C620 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DD9B6DC21E72C00D0046C620 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DD9B6DC51E72C00D0046C620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD9B6DC71E72C00D0046C620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD9B6DCA1E72C00D0046C620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD9B6DCC1E72C00D0046C620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD9B6DD81E72C7A10046C620 /* LXJHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJHomeViewController.h; sourceTree = "<group>"; };
+		DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +82,11 @@
 		DD9B6DBA1E72C00D0046C620 /* NetNewsEasy */ = {
 			isa = PBXGroup;
 			children = (
+				DD9B6DD21E72C7750046C620 /* Classes */,
+				DD9B6DD71E72C7750046C620 /* Tools */,
+				DD9B6DD61E72C7750046C620 /* MaterialLibrary */,
 				DD9B6DBE1E72C00D0046C620 /* AppDelegate.h */,
 				DD9B6DBF1E72C00D0046C620 /* AppDelegate.m */,
-				DD9B6DC11E72C00D0046C620 /* ViewController.h */,
-				DD9B6DC21E72C00D0046C620 /* ViewController.m */,
 				DD9B6DC41E72C00D0046C620 /* Main.storyboard */,
 				DD9B6DC71E72C00D0046C620 /* Assets.xcassets */,
 				DD9B6DC91E72C00D0046C620 /* LaunchScreen.storyboard */,
@@ -101,6 +102,53 @@
 				DD9B6DBC1E72C00D0046C620 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD9B6DD21E72C7750046C620 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD9B6DD31E72C7750046C620 /* Controllers */,
+				DD9B6DD41E72C7750046C620 /* Models */,
+				DD9B6DD51E72C7750046C620 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DD9B6DD31E72C7750046C620 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD9B6DD81E72C7A10046C620 /* LXJHomeViewController.h */,
+				DD9B6DD91E72C7A10046C620 /* LXJHomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DD9B6DD41E72C7750046C620 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD9B6DD51E72C7750046C620 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD9B6DD61E72C7750046C620 /* MaterialLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MaterialLibrary;
+			sourceTree = "<group>";
+		};
+		DD9B6DD71E72C7750046C620 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD9B6DC31E72C00D0046C620 /* ViewController.m in Sources */,
 				DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */,
 				DD9B6DBD1E72C00D0046C620 /* main.m in Sources */,
+				DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
