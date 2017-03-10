@@ -105,7 +105,6 @@
 		DD9B6DB01E72C00D0046C620 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = LXJ;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "李旭杰";
 				TargetAttributes = {
