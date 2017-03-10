@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D87F6D270A08C644A709F2F1 /* libPods-NetNewsEasy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B75BA849C8257559740A34FC /* libPods-NetNewsEasy.a */; };
 		DD9B6DBD1E72C00D0046C620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DBC1E72C00D0046C620 /* main.m */; };
 		DD9B6DC01E72C00D0046C620 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DBF1E72C00D0046C620 /* AppDelegate.m */; };
 		DD9B6DC31E72C00D0046C620 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DC21E72C00D0046C620 /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ED730DE0279E5AD74BEC488 /* Pods-NetNewsEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetNewsEasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetNewsEasy/Pods-NetNewsEasy.debug.xcconfig"; sourceTree = "<group>"; };
+		A684C1F3438ECCD169FC88E1 /* Pods-NetNewsEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetNewsEasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetNewsEasy/Pods-NetNewsEasy.release.xcconfig"; sourceTree = "<group>"; };
+		B75BA849C8257559740A34FC /* libPods-NetNewsEasy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetNewsEasy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9B6DB81E72C00D0046C620 /* NetNewsEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetNewsEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9B6DBC1E72C00D0046C620 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD9B6DBE1E72C00D0046C620 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87F6D270A08C644A709F2F1 /* libPods-NetNewsEasy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53B4F1F528B710CE247D1C90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7ED730DE0279E5AD74BEC488 /* Pods-NetNewsEasy.debug.xcconfig */,
+				A684C1F3438ECCD169FC88E1 /* Pods-NetNewsEasy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2E3CA9DE50FCC33FDA74ED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B75BA849C8257559740A34FC /* libPods-NetNewsEasy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD9B6DAF1E72C00D0046C620 = {
 			isa = PBXGroup;
 			children = (
 				DD9B6DBA1E72C00D0046C620 /* NetNewsEasy */,
 				DD9B6DB91E72C00D0046C620 /* Products */,
+				53B4F1F528B710CE247D1C90 /* Pods */,
+				A2E3CA9DE50FCC33FDA74ED5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD9B6DCF1E72C00D0046C620 /* Build configuration list for PBXNativeTarget "NetNewsEasy" */;
 			buildPhases = (
+				F245AAEB80105EC1D3FC7CC0 /* [CP] Check Pods Manifest.lock */,
 				DD9B6DB41E72C00D0046C620 /* Sources */,
 				DD9B6DB51E72C00D0046C620 /* Frameworks */,
 				DD9B6DB61E72C00D0046C620 /* Resources */,
+				54767D1297212923F83C9A0A /* [CP] Embed Pods Frameworks */,
+				7B3E587323958E9751275698 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54767D1297212923F83C9A0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetNewsEasy/Pods-NetNewsEasy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3E587323958E9751275698 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetNewsEasy/Pods-NetNewsEasy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F245AAEB80105EC1D3FC7CC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD9B6DB41E72C00D0046C620 /* Sources */ = {
@@ -269,6 +344,7 @@
 		};
 		DD9B6DD01E72C00D0046C620 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ED730DE0279E5AD74BEC488 /* Pods-NetNewsEasy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetNewsEasy/Info.plist;
@@ -281,6 +357,7 @@
 		};
 		DD9B6DD11E72C00D0046C620 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A684C1F3438ECCD169FC88E1 /* Pods-NetNewsEasy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetNewsEasy/Info.plist;
