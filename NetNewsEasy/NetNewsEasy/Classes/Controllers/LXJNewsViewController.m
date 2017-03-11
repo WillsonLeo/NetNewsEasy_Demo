@@ -18,6 +18,7 @@
  存储当前页面的新闻数据
  */
 @property (nonatomic, strong) NSArray<LXJNewsModel *> *newsData;
+
 @end
 
 // 每个 cell 的重用 id
@@ -32,10 +33,11 @@ static NSString *morePicCellID = @"morePicCellID";
     // 界面搭建
     [self setupUI];
 }
+
 // 界面搭建
 - (void) setupUI{
     // 注册单元格
-    //    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
+    // [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:baseCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"MorePicCell" bundle:nil] forCellReuseIdentifier:morePicCellID];
@@ -61,7 +63,6 @@ static NSString *morePicCellID = @"morePicCellID";
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

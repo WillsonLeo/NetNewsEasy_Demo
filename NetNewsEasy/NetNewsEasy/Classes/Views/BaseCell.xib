@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,24 +15,25 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqd-md-U27" id="2yW-tv-ROG">
-                <rect key="frame" x="0.0" y="0.0" width="415" height="83"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="83.666666666666671"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHI-Ek-c04">
-                        <rect key="frame" x="94" y="5" width="311" height="18"/>
+                        <rect key="frame" x="152" y="5" width="253" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eC6-ow-nHW">
-                        <rect key="frame" x="10" y="5" width="74" height="74"/>
+                        <rect key="frame" x="10" y="5" width="132" height="74"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="74" id="48U-Mu-O5d"/>
-                            <constraint firstAttribute="width" constant="74" id="Cv0-ns-D0G"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="74" id="UtH-zh-6Ig"/>
+                            <constraint firstAttribute="width" constant="132" id="UtJ-df-1kw"/>
+                            <constraint firstAttribute="height" constant="74" id="e3d-KF-K5S"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkR-bS-de9">
-                        <rect key="frame" x="94" y="63" width="33" height="16"/>
+                        <rect key="frame" x="152" y="63" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -45,16 +46,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MkR-bS-de9" firstAttribute="leading" secondItem="eC6-ow-nHW" secondAttribute="trailing" constant="10" id="1bQ-Op-gQQ"/>
-                    <constraint firstItem="MkR-bS-de9" firstAttribute="bottom" secondItem="eC6-ow-nHW" secondAttribute="bottom" id="1lA-en-Oab"/>
-                    <constraint firstItem="MkR-bS-de9" firstAttribute="leading" secondItem="qHI-Ek-c04" secondAttribute="leading" id="4zQ-Cy-Nuf"/>
-                    <constraint firstItem="eC6-ow-nHW" firstAttribute="leading" secondItem="2yW-tv-ROG" secondAttribute="leading" constant="10" id="8tc-jD-Dva"/>
-                    <constraint firstItem="eC6-ow-nHW" firstAttribute="top" secondItem="2yW-tv-ROG" secondAttribute="top" constant="5" id="Cv3-qE-QhZ"/>
-                    <constraint firstItem="Lbb-3Z-M07" firstAttribute="trailing" secondItem="qHI-Ek-c04" secondAttribute="trailing" id="Pdq-AL-DAY"/>
-                    <constraint firstAttribute="trailing" secondItem="qHI-Ek-c04" secondAttribute="trailing" constant="10" id="RfN-pV-ApB"/>
-                    <constraint firstItem="qHI-Ek-c04" firstAttribute="leading" secondItem="eC6-ow-nHW" secondAttribute="trailing" constant="10" id="Xr3-gz-Xpe"/>
-                    <constraint firstItem="Lbb-3Z-M07" firstAttribute="bottom" secondItem="MkR-bS-de9" secondAttribute="bottom" id="igG-I0-dce"/>
-                    <constraint firstItem="qHI-Ek-c04" firstAttribute="top" secondItem="eC6-ow-nHW" secondAttribute="top" id="tjN-Xg-WAf"/>
+                    <constraint firstItem="MkR-bS-de9" firstAttribute="bottom" secondItem="eC6-ow-nHW" secondAttribute="bottom" id="6DM-x4-s4w"/>
+                    <constraint firstItem="qHI-Ek-c04" firstAttribute="leading" secondItem="eC6-ow-nHW" secondAttribute="trailing" constant="10" id="BQh-Lu-Y3C"/>
+                    <constraint firstAttribute="trailing" secondItem="qHI-Ek-c04" secondAttribute="trailing" constant="10" id="EH2-80-Fjr"/>
+                    <constraint firstItem="eC6-ow-nHW" firstAttribute="top" secondItem="2yW-tv-ROG" secondAttribute="top" constant="5" id="FyN-wg-AJD"/>
+                    <constraint firstItem="Lbb-3Z-M07" firstAttribute="trailing" secondItem="qHI-Ek-c04" secondAttribute="trailing" id="HbV-kq-ASQ"/>
+                    <constraint firstItem="MkR-bS-de9" firstAttribute="leading" secondItem="qHI-Ek-c04" secondAttribute="leading" id="R5P-Hq-SiJ"/>
+                    <constraint firstItem="Lbb-3Z-M07" firstAttribute="bottom" secondItem="MkR-bS-de9" secondAttribute="bottom" id="czx-R9-8eG"/>
+                    <constraint firstItem="qHI-Ek-c04" firstAttribute="top" secondItem="eC6-ow-nHW" secondAttribute="top" id="ecb-6j-rdt"/>
+                    <constraint firstItem="eC6-ow-nHW" firstAttribute="leading" secondItem="2yW-tv-ROG" secondAttribute="leading" constant="10" id="x1Q-A8-xgb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -63,7 +63,7 @@
                 <outlet property="labelSource" destination="MkR-bS-de9" id="POh-l8-zjs"/>
                 <outlet property="labelTitle" destination="qHI-Ek-c04" id="CCL-Td-vDY"/>
             </connections>
-            <point key="canvasLocation" x="92.5" y="-106.5"/>
+            <point key="canvasLocation" x="-195" y="-264"/>
         </tableViewCell>
     </objects>
 </document>

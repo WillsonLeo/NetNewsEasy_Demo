@@ -33,7 +33,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoV-Z9-968">
                         <rect key="frame" x="10" y="28" width="355" height="129"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="129" id="kae-o6-AfL"/>
+                            <constraint firstAttribute="height" constant="129" id="gw8-KA-c2j"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s35-Cw-4Gj">
@@ -44,17 +44,17 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="s35-Cw-4Gj" firstAttribute="top" secondItem="QoV-Z9-968" secondAttribute="bottom" constant="5" id="4cU-sN-WI5"/>
-                    <constraint firstItem="s35-Cw-4Gj" firstAttribute="leading" secondItem="Lt3-kO-yoi" secondAttribute="leading" id="7QC-lL-5z5"/>
-                    <constraint firstAttribute="bottom" secondItem="s35-Cw-4Gj" secondAttribute="bottom" constant="5" id="EKB-It-fMh"/>
-                    <constraint firstItem="QoV-Z9-968" firstAttribute="top" secondItem="Lt3-kO-yoi" secondAttribute="bottom" constant="5" id="Ed5-KC-Zch"/>
-                    <constraint firstAttribute="trailing" secondItem="Lt3-kO-yoi" secondAttribute="trailing" constant="10" id="cBW-60-sek"/>
-                    <constraint firstItem="Lt3-kO-yoi" firstAttribute="leading" secondItem="uJf-Ju-Wvd" secondAttribute="leading" constant="10" id="ePg-6p-mnZ"/>
-                    <constraint firstAttribute="trailing" secondItem="QoV-Z9-968" secondAttribute="trailing" constant="10" id="hfC-CP-fdC"/>
-                    <constraint firstItem="sr2-hz-q7B" firstAttribute="trailing" secondItem="Lt3-kO-yoi" secondAttribute="trailing" id="nXl-Nj-hDZ"/>
-                    <constraint firstItem="QoV-Z9-968" firstAttribute="leading" secondItem="uJf-Ju-Wvd" secondAttribute="leading" constant="10" id="vUl-1A-vlF"/>
-                    <constraint firstItem="sr2-hz-q7B" firstAttribute="bottom" secondItem="s35-Cw-4Gj" secondAttribute="bottom" id="wAF-DW-PNt"/>
-                    <constraint firstItem="Lt3-kO-yoi" firstAttribute="top" secondItem="uJf-Ju-Wvd" secondAttribute="top" constant="5" id="zwp-gO-s3U"/>
+                    <constraint firstItem="sr2-hz-q7B" firstAttribute="bottom" secondItem="s35-Cw-4Gj" secondAttribute="bottom" id="5nq-ee-kad"/>
+                    <constraint firstItem="s35-Cw-4Gj" firstAttribute="top" secondItem="QoV-Z9-968" secondAttribute="bottom" constant="5" id="H0Y-sS-1Nc"/>
+                    <constraint firstAttribute="trailing" secondItem="QoV-Z9-968" secondAttribute="trailing" constant="10" id="MNI-9F-Kgs"/>
+                    <constraint firstItem="Lt3-kO-yoi" firstAttribute="top" secondItem="uJf-Ju-Wvd" secondAttribute="top" constant="5" id="OBC-aq-ujT"/>
+                    <constraint firstItem="QoV-Z9-968" firstAttribute="leading" secondItem="uJf-Ju-Wvd" secondAttribute="leading" constant="10" id="OUM-BI-0c2"/>
+                    <constraint firstAttribute="bottom" secondItem="s35-Cw-4Gj" secondAttribute="bottom" constant="5" id="SVn-1W-JPa"/>
+                    <constraint firstItem="Lt3-kO-yoi" firstAttribute="leading" secondItem="uJf-Ju-Wvd" secondAttribute="leading" constant="10" id="brJ-JE-5jS"/>
+                    <constraint firstAttribute="trailing" secondItem="Lt3-kO-yoi" secondAttribute="trailing" constant="10" id="cWc-1o-Pko"/>
+                    <constraint firstItem="QoV-Z9-968" firstAttribute="top" secondItem="Lt3-kO-yoi" secondAttribute="bottom" constant="5" id="o7L-py-Va0"/>
+                    <constraint firstItem="s35-Cw-4Gj" firstAttribute="leading" secondItem="Lt3-kO-yoi" secondAttribute="leading" id="yRm-F8-bVV"/>
+                    <constraint firstItem="sr2-hz-q7B" firstAttribute="trailing" secondItem="Lt3-kO-yoi" secondAttribute="trailing" id="zhX-FQ-LFW"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
