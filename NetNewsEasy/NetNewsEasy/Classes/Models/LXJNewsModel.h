@@ -60,12 +60,12 @@
 /**
  新闻回复数量
  */
-@property (nonatomic, copy) NSString *replyCount;
+@property (nonatomic, assign) NSInteger *replyCount;
 
 /**
  新闻多图
  */
-@property (nonatomic, copy) NSString *imgextra;
+@property (nonatomic, strong) NSArray *imgextra;
 
 /**
  大图标记[为什么没有找到啊??????]

@@ -19,14 +19,22 @@
 @end
 
 // 每个 cell 的重用 id
-static NSString *cellID = @"newsDetails";
+static NSString *baseCellID = @"baseCellID";
 
 @implementation LXJNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 界面搭建
+    [self setupUI];
 }
+// 界面搭建
+- (void) setupUI{
+    // 注册单元格
+    //    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:baseCellID];
+}
+
 // urlstr 的 set 方法
 - (void)setURLStr:(NSString *)URLStr{
     _URLStr = URLStr;
@@ -39,9 +47,6 @@ static NSString *cellID = @"newsDetails";
         // 刷新数据
         [self.tableView reloadData];
     }];
-    
-    // 注册单元格
-    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,15 +66,20 @@ static NSString *cellID = @"newsDetails";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LXJNewsDetailsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
-    cell.textLabel.text = self.newsData[indexPath.row].title;
+    LXJNewsDetailsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:baseCellID forIndexPath:indexPath];
+    
+//    cell.textLabel.text = self.newsData[indexPath.row].title;
     // 赋值模型对象
-//    cell.newsDetailsModel = self.newsData[indexPath.row];
+    cell.newsDetailsModel = self.newsData[indexPath.row];
     
     return cell;
 }
 
+// 设置行高
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 84;
+}
 
 /*
 // Override to support conditional editing of the table view.
