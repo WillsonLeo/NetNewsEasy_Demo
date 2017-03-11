@@ -25,6 +25,7 @@
 		DD9B6DF61E72E3950046C620 /* LXJNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF51E72E3950046C620 /* LXJNewsModel.m */; };
 		DD9B6DF91E72F0ED0046C620 /* LXJNewsDetailsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */; };
 		DDBD26DA1E73B0AA002D1C4D /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */; };
+		DDBD26DC1E73BD7A002D1C4D /* BigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		DD9B6DF71E72F0ED0046C620 /* LXJNewsDetailsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJNewsDetailsViewCell.h; sourceTree = "<group>"; };
 		DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsDetailsViewCell.m; sourceTree = "<group>"; };
 		DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
+		DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				DD9B6DF71E72F0ED0046C620 /* LXJNewsDetailsViewCell.h */,
 				DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */,
 				DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */,
+				DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				DD9B6DCB1E72C00D0046C620 /* LaunchScreen.storyboard in Resources */,
 				DD9B6DC81E72C00D0046C620 /* Assets.xcassets in Resources */,
+				DDBD26DC1E73BD7A002D1C4D /* BigImageCell.xib in Resources */,
 				DDBD26DA1E73B0AA002D1C4D /* BaseCell.xib in Resources */,
 				DD9B6DDC1E72CA1F0046C620 /* topic_news.json in Resources */,
 				DD9B6DC61E72C00D0046C620 /* Main.storyboard in Resources */,

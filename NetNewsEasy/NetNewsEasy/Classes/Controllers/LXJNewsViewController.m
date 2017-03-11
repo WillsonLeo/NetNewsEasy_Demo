@@ -9,6 +9,8 @@
 #import "LXJNewsViewController.h"
 #import "LXJNewsModel.h"
 #import "LXJNewsDetailsViewCell.h"
+#define BASECELLHEIGHT 84
+#define BIGIMAGECELLHEIGHT 184
 
 @interface LXJNewsViewController ()
 
@@ -20,6 +22,7 @@
 
 // 每个 cell 的重用 id
 static NSString *baseCellID = @"baseCellID";
+static NSString *bigImageCellID = @"bigImageCellID";
 
 @implementation LXJNewsViewController
 
@@ -33,6 +36,7 @@ static NSString *baseCellID = @"baseCellID";
     // 注册单元格
     //    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:baseCellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
 }
 
 // urlstr 的 set 方法
@@ -41,7 +45,7 @@ static NSString *baseCellID = @"baseCellID";
     
     // 请求网络数据
     [LXJNewsModel requestNewsDataFromURLStr:URLStr completion:^(NSArray *newsData) {
-//        NSLog(@"%@",newsData);
+        //        NSLog(@"%@",newsData);
         // 数据关联
         self.newsData = newsData;
         // 刷新数据
@@ -67,62 +71,78 @@ static NSString *baseCellID = @"baseCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    LXJNewsDetailsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:baseCellID forIndexPath:indexPath];
+    LXJNewsDetailsViewCell *cell;
+    // 根据下边获取当前模型
+    LXJNewsModel *newsModel = self.newsData[indexPath.row];
     
-//    cell.textLabel.text = self.newsData[indexPath.row].title;
+    if (newsModel.imgType) {
+        cell = [tableView dequeueReusableCellWithIdentifier:bigImageCellID forIndexPath:indexPath];
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:baseCellID forIndexPath:indexPath];
+    }
+    
+    //    cell.textLabel.text = self.newsData[indexPath.row].title;
     // 赋值模型对象
-    cell.newsDetailsModel = self.newsData[indexPath.row];
+    cell.newsDetailsModel = newsModel;
     
     return cell;
 }
 
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 根据下边获取当前模型
+    LXJNewsModel *newsModel = self.newsData[indexPath.row];
+    
+    if (newsModel.imgType) {
+        return BIGIMAGECELLHEIGHT;
+    }else{
+        return BASECELLHEIGHT;
+    }
     return 84;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -29,7 +29,7 @@
     tableVC = [[LXJNewsViewController alloc] initWithStyle:UITableViewStylePlain];
     tableVC.view.frame = self.bounds;
     // 设置每个 cell 的背景颜色
-    tableVC.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1.0];
+//    tableVC.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1.0];
     // 添加到父控件上面
     [self.contentView addSubview:tableVC.view];
 }
