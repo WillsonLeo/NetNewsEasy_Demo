@@ -27,6 +27,7 @@
 		DDBD26DA1E73B0AA002D1C4D /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */; };
 		DDBD26DC1E73BD7A002D1C4D /* BigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */; };
 		DDBD26DE1E73CBAB002D1C4D /* MorePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26DD1E73CBAB002D1C4D /* MorePicCell.xib */; };
+		DDBD26E11E742953002D1C4D /* LXJPicInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBD26E01E742953002D1C4D /* LXJPicInfoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImageCell.xib; sourceTree = "<group>"; };
 		DDBD26DD1E73CBAB002D1C4D /* MorePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MorePicCell.xib; sourceTree = "<group>"; };
+		DDBD26DF1E742953002D1C4D /* LXJPicInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXJPicInfoModel.h; sourceTree = "<group>"; };
+		DDBD26E01E742953002D1C4D /* LXJPicInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJPicInfoModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				DD9B6DE21E72CCC80046C620 /* LXJChannelModel.m */,
 				DD9B6DF41E72E3950046C620 /* LXJNewsModel.h */,
 				DD9B6DF51E72E3950046C620 /* LXJNewsModel.m */,
+				DDBD26DF1E742953002D1C4D /* LXJPicInfoModel.h */,
+				DDBD26E01E742953002D1C4D /* LXJPicInfoModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				DD9B6DE61E72D0E20046C620 /* LXJChannelLabel.m in Sources */,
 				DD9B6DBD1E72C00D0046C620 /* main.m in Sources */,
 				DD9B6DDA1E72C7A10046C620 /* LXJHomeViewController.m in Sources */,
+				DDBD26E11E742953002D1C4D /* LXJPicInfoModel.m in Sources */,
 				DD9B6DF31E72DF3B0046C620 /* LXJSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,6 +65,7 @@
 /**
  新闻多图
  */
+// 这个数组里面存放的是字典 需要将他转换为模型
 @property (nonatomic, strong) NSArray *imgextra;
 
 /**

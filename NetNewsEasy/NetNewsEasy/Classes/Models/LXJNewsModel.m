@@ -9,8 +9,14 @@
 #import "LXJNewsModel.h"
 #import "LXJSessionManager.h"
 #import <YYModel.h>
+#import "LXJPicInfoModel.h"
 
 @implementation LXJNewsModel
+//  模型容器属性(NSArray,NSSet)指定对应的class
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"imgextra" : [LXJPicInfoModel class]};
+}
+
 // 请求数据
 +(void) requestNewsDataFromURLStr:(NSString *)URLStr completion:(void(^)(NSArray *newsData))completion{
     // 发起网络请求

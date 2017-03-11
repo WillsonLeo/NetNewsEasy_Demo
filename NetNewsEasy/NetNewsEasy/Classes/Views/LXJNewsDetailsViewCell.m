@@ -9,6 +9,7 @@
 #import "LXJNewsDetailsViewCell.h"
 #import <UIImageView+WebCache.h>
 #import <UIImageView+WebCache.h>
+#import "LXJPicInfoModel.h"
 
 @interface LXJNewsDetailsViewCell ()
 
@@ -67,12 +68,14 @@
     self.labelSource.text = newsDetailsModel.source;
     self.labelReplyCount.text = [NSString stringWithFormat:@"%zd",newsDetailsModel.replyCount];
     
-    // 遍历morePicImg数组
+    // 遍历morePicImg数组 给剩余两张图片进行图片内容显示
     [self.morePicImg enumerateObjectsUsingBlock:^(UIImageView *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         // 根据下标获取对应的模型URL 路径
-        NSString *URLStr = [newsDetailsModel.imgextra[idx] objectForKey:@"imgsrc"];
+//        NSString *URLStr = [newsDetailsModel.imgextra[idx] objectForKey:@"imgsrc"];
+        // 根据下标获取对应的 picinfo 模型
+        LXJPicInfoModel *picInfo = newsDetailsModel.imgextra[idx];
         // 在对应的图片显示内容
-        [obj sd_setImageWithURL:[NSURL URLWithString:URLStr] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+        [obj sd_setImageWithURL:[NSURL URLWithString:picInfo.imgsrc] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
     }];
     
 }
