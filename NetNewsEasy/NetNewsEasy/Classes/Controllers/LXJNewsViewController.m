@@ -23,6 +23,7 @@
 // 每个 cell 的重用 id
 static NSString *baseCellID = @"baseCellID";
 static NSString *bigImageCellID = @"bigImageCellID";
+static NSString *morePicCellID = @"morePicCellID";
 
 @implementation LXJNewsViewController
 
@@ -37,6 +38,7 @@ static NSString *bigImageCellID = @"bigImageCellID";
     //    [self.tableView registerClass:[LXJNewsDetailsViewCell class] forCellReuseIdentifier:cellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:baseCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MorePicCell" bundle:nil] forCellReuseIdentifier:morePicCellID];
 }
 
 // urlstr 的 set 方法
@@ -76,8 +78,13 @@ static NSString *bigImageCellID = @"bigImageCellID";
     LXJNewsModel *newsModel = self.newsData[indexPath.row];
     
     if (newsModel.imgType) {
+        // 基本的 cell
         cell = [tableView dequeueReusableCellWithIdentifier:bigImageCellID forIndexPath:indexPath];
+    }else if (newsModel.imgextra.count == 2){
+        // 多图 cell
+        cell = [tableView dequeueReusableCellWithIdentifier:morePicCellID forIndexPath:indexPath];
     }else{
+        // 大图 cell
         cell = [tableView dequeueReusableCellWithIdentifier:baseCellID forIndexPath:indexPath];
     }
     
@@ -94,11 +101,15 @@ static NSString *bigImageCellID = @"bigImageCellID";
     LXJNewsModel *newsModel = self.newsData[indexPath.row];
     
     if (newsModel.imgType) {
+        // 大图
+        return BIGIMAGECELLHEIGHT;
+    }else if (newsModel.imgextra.count == 2){
+        // 多图
         return BIGIMAGECELLHEIGHT;
     }else{
+        // 基本
         return BASECELLHEIGHT;
     }
-    return 84;
 }
 
 /*

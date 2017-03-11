@@ -26,6 +26,7 @@
 		DD9B6DF91E72F0ED0046C620 /* LXJNewsDetailsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */; };
 		DDBD26DA1E73B0AA002D1C4D /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */; };
 		DDBD26DC1E73BD7A002D1C4D /* BigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */; };
+		DDBD26DE1E73CBAB002D1C4D /* MorePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDBD26DD1E73CBAB002D1C4D /* MorePicCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXJNewsDetailsViewCell.m; sourceTree = "<group>"; };
 		DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImageCell.xib; sourceTree = "<group>"; };
+		DDBD26DD1E73CBAB002D1C4D /* MorePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MorePicCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				DD9B6DF81E72F0ED0046C620 /* LXJNewsDetailsViewCell.m */,
 				DDBD26D91E73B0AA002D1C4D /* BaseCell.xib */,
 				DDBD26DB1E73BD7A002D1C4D /* BigImageCell.xib */,
+				DDBD26DD1E73CBAB002D1C4D /* MorePicCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				DDBD26DA1E73B0AA002D1C4D /* BaseCell.xib in Resources */,
 				DD9B6DDC1E72CA1F0046C620 /* topic_news.json in Resources */,
 				DD9B6DC61E72C00D0046C620 /* Main.storyboard in Resources */,
+				DDBD26DE1E73CBAB002D1C4D /* MorePicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

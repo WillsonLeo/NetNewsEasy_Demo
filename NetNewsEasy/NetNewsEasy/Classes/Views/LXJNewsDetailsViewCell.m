@@ -8,6 +8,7 @@
 
 #import "LXJNewsDetailsViewCell.h"
 #import <UIImageView+WebCache.h>
+#import <UIImageView+WebCache.h>
 
 @interface LXJNewsDetailsViewCell ()
 
@@ -31,6 +32,10 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *labelReplyCount;
 
+/**
+ 更多的图片
+ */
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *morePicImg;
 
 @end
 
@@ -49,6 +54,8 @@
     //  设置图片的填充模式 将超出部分进行剪裁
     self.imageViewImgsrc.contentMode = UIViewContentModeScaleAspectFill;
     self.imageViewImgsrc.clipsToBounds = YES;
+    
+    
 }
 
 // 重写模型的 set 方法
@@ -59,6 +66,14 @@
     self.labelTitle.text = newsDetailsModel.title;
     self.labelSource.text = newsDetailsModel.source;
     self.labelReplyCount.text = [NSString stringWithFormat:@"%zd",newsDetailsModel.replyCount];
+    
+    // 遍历morePicImg数组
+    [self.morePicImg enumerateObjectsUsingBlock:^(UIImageView *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        // 根据下标获取对应的模型URL 路径
+        NSString *URLStr = [newsDetailsModel.imgextra[idx] objectForKey:@"imgsrc"];
+        // 在对应的图片显示内容
+        [obj sd_setImageWithURL:[NSURL URLWithString:URLStr] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+    }];
     
 }
 
