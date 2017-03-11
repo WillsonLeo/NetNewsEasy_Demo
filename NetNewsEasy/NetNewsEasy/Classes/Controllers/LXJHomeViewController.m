@@ -113,11 +113,50 @@ static NSString *newsViewCellID = @"newsViewCellID";
         channelLabel.textAlignment = NSTextAlignmentCenter;
         // 添加到channelView上
         [self.channelView addSubview:channelLabel];
+        
+        // 打来 label 的用户交互
+        channelLabel.userInteractionEnabled = YES;
+        // 创建轻点手势
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        // 添加到 label 上
+        [channelLabel addGestureRecognizer:tapGesture];
+        // 设置 label 的 tag 值
+        channelLabel.tag = idx;
     }];
     // 设置channelView的滚动范围
     self.channelView.contentSize = CGSizeMake(channelLabelWidth * self.channelData.count, 0);
 }
 
+// 点击频道标签的时候在中央显示 label
+- (void) tapAction:(UITapGestureRecognizer *)sender {
+    // 获取当前点击的 label
+    LXJChannelLabel *channelLabel = (LXJChannelLabel *)sender.view;
+    // 获取当前 label 的  centerX 的值
+    CGFloat channelLabelCenterX = channelLabel.center.x;
+    // 计算频道标签的contentoffsetX
+    CGFloat channelLabelContentOffsetX = channelLabelCenterX - self.view.bounds.size.width * .5;
+    
+    // 修复点击头尾 cell 的位置问题
+    CGFloat channelLabelContentOffsetXMin = 0;
+    CGFloat channelLabelContentOffsetXMax = self.channelView.contentSize.width - self.view.bounds.size.width;
+    
+    // 判断channelLabelContentOffsetX的值得范围
+    if (channelLabelContentOffsetX < channelLabelContentOffsetXMin) {
+        channelLabelContentOffsetX = channelLabelContentOffsetXMin;
+    } else if (channelLabelContentOffsetX > channelLabelContentOffsetXMax){
+        channelLabelContentOffsetX = channelLabelContentOffsetXMax;
+    }
+    
+    
+    // 使得当前频道标签滚动到指定位置
+    [self.channelView setContentOffset:CGPointMake(channelLabelContentOffsetX, 0) animated:YES];
+    
+    
+    // 获取滚动视图的 indexPath
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
+    // 使得下面的新闻界面随着点击的时候显示合适的界面
+    [self.newsView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
