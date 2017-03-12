@@ -60,7 +60,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
 - (void) setupUI{
     // 如果在导航控制器的下面有滚动视图 内容将=自动往下偏移64,因此需要关闭
     self.automaticallyAdjustsScrollViewInsets = NO;
-
+    
     // 关闭channelView的水平垂直指示器
     self.channelView.showsVerticalScrollIndicator = NO;
     self.channelView.showsHorizontalScrollIndicator = NO;
@@ -147,7 +147,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
 - (void) tapAction:(UITapGestureRecognizer *)sender {
     // 获取当前点击的 label
     LXJChannelLabel *channelLabel = (LXJChannelLabel *)sender.view;
- 
+    
     [self makeCurrentChannelLabelInTheCenter:channelLabel];
     
     // 获取滚动视图的 indexPath
@@ -173,7 +173,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
     } else if (channelLabelContentOffsetX > channelLabelContentOffsetXMax){
         channelLabelContentOffsetX = channelLabelContentOffsetXMax;
     }
-
+    
     // 使得当前频道标签滚动到指定位置
     [self.channelView setContentOffset:CGPointMake(channelLabelContentOffsetX, 0) animated:YES];
 }
@@ -182,7 +182,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     // 根据偏移量计算下边
     NSInteger index = scrollView.contentOffset.x / self.view.bounds.size.width;
-//    NSLog(@"当前是第 %zd 页", index);
+    //    NSLog(@"当前是第 %zd 页", index);
     // 根据当前下标时标签偏移到中心的位处
     [self makeCurrentChannelLabelInTheCenter:[self.channelLabelArr objectAtIndex:index]];
     
@@ -194,10 +194,10 @@ static NSString *newsViewCellID = @"newsViewCellID";
     CGFloat contentOffsetX = scrollView.contentOffset.x;
     // 计算浮点的下标
     CGFloat indexFloat = contentOffsetX / scrollView.bounds.size.width;
-//    NSLog(@"%f",indexFloat);
+    //    NSLog(@"%f",indexFloat);
     // 获取整型下标
     NSInteger indexInteger =contentOffsetX / scrollView.bounds.size.width;
-//    NSLog(@"%zd", indexInteger);
+    //    NSLog(@"%zd", indexInteger);
     
     //计算缩放比
     CGFloat scale = indexFloat - indexInteger;
@@ -213,14 +213,14 @@ static NSString *newsViewCellID = @"newsViewCellID";
     
     // 获取对应的 label
     LXJChannelLabel *leftLabel = [self.channelLabelArr objectAtIndex:leftLabelIndex];
-    LXJChannelLabel *rightLabel = [self.channelLabelArr objectAtIndex:rightLabelIndex];
-    
     // 给对应的 label 赋值缩放比
     leftLabel.scale = leftLabelScale;
-    rightLabel.scale = rightLabelScale;
     
-    
-    
+    // 判断右边的 label 的下标是否已经越界
+    if (rightLabelIndex < self.channelLabelArr.count) {
+        // 设置右面的频道标签亮起
+        [self.channelLabelArr[rightLabelIndex] setScale:rightLabelScale];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
