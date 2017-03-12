@@ -131,6 +131,11 @@ static NSString *newsViewCellID = @"newsViewCellID";
         // 设置 label 的 tag 值[说明:任何的 view 都有 tag 属性]
         channelLabel.tag = idx;
         
+        // 设置程序一起懂得时候的默认缩放比
+        if (idx == 0) {
+            channelLabel.scale = 1;
+        }
+        
         // 将创建好的频道 label 添加到数组中进行保存起来
         [self.channelLabelArr addObject:channelLabel];
     }];
@@ -193,16 +198,19 @@ static NSString *newsViewCellID = @"newsViewCellID";
     // 获取整型下标
     NSInteger indexInteger =contentOffsetX / scrollView.bounds.size.width;
 //    NSLog(@"%zd", indexInteger);
+    
     //计算缩放比
     CGFloat scale = indexFloat - indexInteger;
-//    NSLog(@"%f" ,scale);
-    // 滑动时计算左右两边的缩放比
-    CGFloat leftLabelScale = 1 - scale;
-    CGFloat rightLabelScale = scale;
+    //    NSLog(@"%f" ,scale);
     
     // 根据索引获取左右的标签 先获取索引
     NSInteger leftLabelIndex = indexFloat;
     NSInteger rightLabelIndex = leftLabelIndex + 1;
+    
+    // 滑动时计算左右两边的缩放比
+    CGFloat leftLabelScale = 1 - scale;
+    CGFloat rightLabelScale = scale;
+    
     // 获取对应的 label
     LXJChannelLabel *leftLabel = [self.channelLabelArr objectAtIndex:leftLabelIndex];
     LXJChannelLabel *rightLabel = [self.channelLabelArr objectAtIndex:rightLabelIndex];
