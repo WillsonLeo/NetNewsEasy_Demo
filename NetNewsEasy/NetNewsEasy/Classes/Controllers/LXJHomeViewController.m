@@ -32,6 +32,11 @@
  */
 @property (nonatomic, strong) NSArray<LXJChannelModel*> *channelData;
 
+/**
+ 频道数据
+ */
+@property (nonatomic, strong) NSMutableArray<LXJChannelLabel*> *channelLabelArr;
+
 @end
 
 //新闻界面的UICollectionViewCell 的重用 ID
@@ -43,11 +48,11 @@ static NSString *newsViewCellID = @"newsViewCellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 获取频道数据并进行展示
-    [self loadChannelDataAndDisplay];
-    
     // 界面搭建
     [self setupUI];
+    
+    // 获取频道数据并进行展示
+    [self loadChannelDataAndDisplay];
     
 }
 
@@ -73,6 +78,9 @@ static NSString *newsViewCellID = @"newsViewCellID";
     self.newsView.showsVerticalScrollIndicator = NO;
     // 打开预加载[还是有些不懂]
     self.newsView.prefetchingEnabled = YES;
+    
+    // 实例化频道标签的数据组
+    self.channelLabelArr = [NSMutableArray array];
 }
 
 // MARK:2. 实现UICollectionView的数据源方法
@@ -120,8 +128,11 @@ static NSString *newsViewCellID = @"newsViewCellID";
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         // 添加到 label 上
         [channelLabel addGestureRecognizer:tapGesture];
-        // 设置 label 的 tag 值
+        // 设置 label 的 tag 值[说明:任何的 view 都有 tag 属性]
         channelLabel.tag = idx;
+        
+        // 将创建好的频道 label 添加到数组中进行保存起来
+        [self.channelLabelArr addObject:channelLabel];
     }];
     // 设置channelView的滚动范围
     self.channelView.contentSize = CGSizeMake(channelLabelWidth * self.channelData.count, 0);
@@ -131,6 +142,17 @@ static NSString *newsViewCellID = @"newsViewCellID";
 - (void) tapAction:(UITapGestureRecognizer *)sender {
     // 获取当前点击的 label
     LXJChannelLabel *channelLabel = (LXJChannelLabel *)sender.view;
+ 
+    [self makeCurrentChannelLabelInTheCenter:channelLabel];
+    
+    // 获取滚动视图的 indexPath
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
+    // 使得下面的新闻界面随着点击的时候显示合适的界面
+    [self.newsView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+// 使频道标签的居中显示
+- (void) makeCurrentChannelLabelInTheCenter:(LXJChannelLabel *)channelLabel {
     // 获取当前 label 的  centerX 的值
     CGFloat channelLabelCenterX = channelLabel.center.x;
     // 计算频道标签的contentoffsetX
@@ -146,16 +168,21 @@ static NSString *newsViewCellID = @"newsViewCellID";
     } else if (channelLabelContentOffsetX > channelLabelContentOffsetXMax){
         channelLabelContentOffsetX = channelLabelContentOffsetXMax;
     }
-    
-    
+
     // 使得当前频道标签滚动到指定位置
     [self.channelView setContentOffset:CGPointMake(channelLabelContentOffsetX, 0) animated:YES];
+}
+
+// 滑动下面的新闻界面,是对应的频道标签居中[时机:在滑动减速的时候执行]
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    // 根据偏移量计算下边
+    NSInteger index = scrollView.contentOffset.x / self.view.bounds.size.width;
+//    NSLog(@"当前是第 %zd 页", index);
+    // 根据当前下标时标签偏移到中心的位处
+    [self makeCurrentChannelLabelInTheCenter:[self.channelLabelArr objectAtIndex:index]];
     
     
-    // 获取滚动视图的 indexPath
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
-    // 使得下面的新闻界面随着点击的时候显示合适的界面
-    [self.newsView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
