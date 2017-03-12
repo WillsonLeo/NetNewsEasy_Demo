@@ -138,7 +138,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
     self.channelView.contentSize = CGSizeMake(channelLabelWidth * self.channelData.count, 0);
 }
 
-// 点击频道标签的时候在中央显示 label
+// MARK:2. 点击频道标签的时候在中央显示 label
 - (void) tapAction:(UITapGestureRecognizer *)sender {
     // 获取当前点击的 label
     LXJChannelLabel *channelLabel = (LXJChannelLabel *)sender.view;
@@ -173,13 +173,43 @@ static NSString *newsViewCellID = @"newsViewCellID";
     [self.channelView setContentOffset:CGPointMake(channelLabelContentOffsetX, 0) animated:YES];
 }
 
-// 滑动下面的新闻界面,是对应的频道标签居中[时机:在滑动减速的时候执行]
+// MARK:3. 滑动下面的新闻界面,是对应的频道标签居中[时机:在滑动减速的时候执行]
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     // 根据偏移量计算下边
     NSInteger index = scrollView.contentOffset.x / self.view.bounds.size.width;
 //    NSLog(@"当前是第 %zd 页", index);
     // 根据当前下标时标签偏移到中心的位处
     [self makeCurrentChannelLabelInTheCenter:[self.channelLabelArr objectAtIndex:index]];
+    
+}
+
+// MARK:4. 在滑动下面新闻页的时候设置频道标签的缩放效果
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    // 获取scrollView的 contentOffsetX 的值
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    // 计算浮点的下标
+    CGFloat indexFloat = contentOffsetX / scrollView.bounds.size.width;
+//    NSLog(@"%f",indexFloat);
+    // 获取整型下标
+    NSInteger indexInteger =contentOffsetX / scrollView.bounds.size.width;
+//    NSLog(@"%zd", indexInteger);
+    //计算缩放比
+    CGFloat scale = indexFloat - indexInteger;
+//    NSLog(@"%f" ,scale);
+    // 滑动时计算左右两边的缩放比
+    CGFloat leftLabelScale = 1 - scale;
+    CGFloat rightLabelScale = scale;
+    
+    // 根据索引获取左右的标签 先获取索引
+    NSInteger leftLabelIndex = indexFloat;
+    NSInteger rightLabelIndex = leftLabelIndex + 1;
+    // 获取对应的 label
+    LXJChannelLabel *leftLabel = [self.channelLabelArr objectAtIndex:leftLabelIndex];
+    LXJChannelLabel *rightLabel = [self.channelLabelArr objectAtIndex:rightLabelIndex];
+    
+    // 给对应的 label 赋值缩放比
+    leftLabel.scale = leftLabelScale;
+    rightLabel.scale = rightLabelScale;
     
     
     

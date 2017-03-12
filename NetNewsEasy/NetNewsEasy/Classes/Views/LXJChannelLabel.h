@@ -10,4 +10,8 @@
 
 @interface LXJChannelLabel : UILabel
 
+/**
+ 设置每个频道的缩放比
+ */
+@property (nonatomic, assign) CGFloat scale;
 @end
