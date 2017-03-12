@@ -136,7 +136,7 @@ static NSString *newsViewCellID = @"newsViewCellID";
             channelLabel.scale = 1;
         }
         
-        // 将创建好的频道 label 添加到数组中进行保存起来
+        // 将创建好的频道 label 以及它全部的状态添加到数组中进行保存起来
         [self.channelLabelArr addObject:channelLabel];
     }];
     // 设置channelView的滚动范围
@@ -154,6 +154,17 @@ static NSString *newsViewCellID = @"newsViewCellID";
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
     // 使得下面的新闻界面随着点击的时候显示合适的界面
     [self.newsView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    
+    //  遍历频道数组,判断点击的频道和数组里面的频道进行查找,如果找到了,那么放大,否则显示默认状态
+    for (LXJChannelLabel *label in self.channelLabelArr) {
+        if (channelLabel == label) {
+            //  设置变大变红
+            label.scale = 1;
+        } else {
+            //  其它频道标签设置成默认状态就可以了
+            label.scale = 0;
+        }
+    }
 }
 
 // 使频道标签的居中显示
